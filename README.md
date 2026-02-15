@@ -1,46 +1,27 @@
-# Astro Starter Kit: Basics
+# 🏛️ Denise Guerra Arquitetura | Redesign de Performance
 
-```sh
-npm create astro@latest -- --template basics
-```
+Este projeto é um redesenho completo da presença digital da arquiteta **Denise Guerra**. O objetivo central foi transformar um site institucional convencional em uma **Landing Page de Alta Conversão**, utilizando o conceito de "Ferraris Digitais": sites estáticos, instantâneos e visualmente disruptivos.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+---
 
-## 🚀 Project Structure
+## 🚀 O Desafio (Operação Rainmaker)
+O site anterior apresentava problemas críticos de performance (LCP elevado) e uma hierarquia visual que escondia o valor dos serviços e do portfólio. Este redesign foca em:
+* **Autoridade:** Tipografia de luxo e estética de boutique.
+* **Velocidade:** Nota 100 no Lighthouse através de Static Site Generation (SSG).
+* **Conversão:** Funil direto para WhatsApp com gatilhos de prova social (+105 clientes).
 
-Inside of your Astro project, you'll see the following folders and files:
+## 🛠️ Stack Tecnológica
+* **Framework:** [Astro](https://astro.build/) (Island Architecture para zero JS desnecessário).
+* **Styling:** [Tailwind CSS v4](https://tailwindcss.com/) (Configuração CSS-first).
+* **Animações:** Vanilla JS + CSS Transitions (Foco em performance e 60fps).
+* **Deploy:** [Vercel](https://vercel.com/) (Edge Network).
+
+## 📁 Estrutura do Projeto
+A arquitetura foi pensada para escalabilidade, permitindo replicar o modelo para outros clientes mudando apenas a camada de dados:
 
 ```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
-
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+/src
+├── data/           # Configuração central de conteúdo (denise.ts)
+├── components/     # Componentes atômicos e seções reutilizáveis
+├── layouts/        # Layout mestre com SEO Local e Schema.org
+└── styles/         # Global CSS com Tailwind v4
