@@ -1,0 +1,32 @@
+---
+import { content } from '../../data/denise';
+---
+
+<section class="py-20 bg-off-white border-y border-gray-100">
+  <div class="container mx-auto px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-12 items-center">
+      
+      <div class="lg:col-span-1 border-l-2 border-brand-purple pl-6">
+        <p class="text-4xl font-serif text-brand-purple mb-2">
+          {content.socialProof.stats.split(' ')[0]}
+        </p>
+        <p class="text-xs uppercase tracking-[0.2em] text-gray-500 font-semibold">
+          {content.socialProof.stats.split(' ').slice(1).join(' ')}
+        </p>
+      </div>
+
+      <div class="lg:col-span-3">
+        <div class="flex flex-wrap items-center justify-around gap-12 grayscale opacity-40 hover:grayscale-0 transition-all duration-700">
+          {content.socialProof.partners.map(partner => (
+            <div class="h-12 w-auto flex items-center justify-center">
+               <span class="text-xl font-bold text-gray-400 hover:text-brand-purple transition-colors cursor-default">
+                 {partner.name}
+               </span>
+               </div>
+          ))}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

@@ -1,4 +1,5 @@
 export const content = {
+  // * HERO SECTION
   hero: {
     title: "Arquitetura que Concretiza Sonhos", // Vamos melhorar essa copy depois
     subtitle: "Há 10 anos criando espaços que refletem histórias e essência em Sorocaba.",
@@ -6,6 +7,7 @@ export const content = {
     whatsapp: "5515996186178"
   },
 
+  // * SERVICES SECTION
   services: {
     title: "Soluções Completas",
     subtitle: "Do conceito à entrega das chaves, transformamos sua visão em realidade técnica e estética.",
@@ -41,5 +43,15 @@ export const content = {
         list: ["Fotos Datadas", "Relatórios Técnicos", "Segurança Jurídica"]
       }
     ]
-  }
+  },
+
+  // * SOCIAL PROOF SECTION
+  socialProof: {
+    stats: "+105 Clientes Satisfeitos",
+    partners: [
+      { name: "Votorantim Energia", logo: "/logos/votorantim.png" },
+      { name: "Lets Play Games", logo: "/logos/letsplay.png" },
+      { name: "BR Machine", logo: "/logos/brmachine.png" }
+    ]
+  },
 }
