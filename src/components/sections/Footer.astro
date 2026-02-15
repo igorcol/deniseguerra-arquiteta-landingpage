@@ -1,0 +1,45 @@
+---
+import { content } from '../../data/denise';
+---
+
+<section id="contato" class="py-24 bg-brand-purple text-white relative overflow-hidden">
+  <div class="absolute -right-20 -bottom-20 text-[20rem] font-serif opacity-5 select-none pointer-events-none">
+    G
+  </div>
+
+  <div class="container mx-auto px-6 relative z-10">
+    <div class="max-w-4xl mx-auto text-center mb-16">
+      <h2 class="text-4xl md:text-6xl font-serif mb-8">{content.contact.ctaTitle}</h2>
+      <p class="text-white/70 text-lg md:text-xl leading-relaxed mb-10">
+        {content.contact.ctaSubtitle}
+      </p>
+      
+      <div class="flex flex-col md:flex-row justify-center gap-6">
+        <a href={`https://wa.me/${content.hero.whatsapp}`} 
+           class="bg-white text-brand-purple px-12 py-5 text-sm uppercase tracking-[0.2em] font-bold hover:bg-black hover:text-white transition-all shadow-2xl">
+          Conversar via WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <div class="border-t border-white/10 pt-16 grid grid-cols-1 md:grid-cols-3 gap-12 text-sm tracking-widest uppercase">
+      <div>
+        <p class="text-white/40 mb-4 text-[10px]">Localização</p>
+        <p>{content.contact.address}</p>
+      </div>
+      <div>
+        <p class="text-white/40 mb-4 text-[10px]">E-mail</p>
+        <p>{content.contact.email}</p>
+      </div>
+      <div>
+        <p class="text-white/40 mb-4 text-[10px]">Redes Sociais</p>
+        <a href="#" class="hover:text-white/60 transition-colors">Instagram</a>
+      </div>
+    </div>
+
+    <div class="mt-20 text-[10px] text-white/20 uppercase tracking-[0.4em] flex justify-between items-center">
+      <p>© 2026 Denise Guerra Arquitetura</p>
+      <p>Desenvolvido por Colombini</p>
+    </div>
+  </div>
+</section>

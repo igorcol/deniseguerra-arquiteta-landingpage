@@ -73,5 +73,14 @@ export const content = {
     title: "Arquiteta e Urbanista",
     bio: "Apaixonada por transformar espaços em experiências. Com formação em Arquitetura e Urbanismo e atuação prática em projetos residenciais, comerciais e interiores, acredito que cada ambiente deve refletir quem o habita em estilo, rotina e essência.",
     experience: "Seu trabalho une técnica, estética e sensibilidade, cuidando de cada detalhe do conceito à execução. Além de projetar, acompanha de perto todas as etapas, garantindo funcionalidade, conforto e personalidade em cada projeto."
+  },
+
+  // * CONTACT SECTION (footer)
+  contact: {
+    ctaTitle: "Dê o primeiro passo",
+    ctaSubtitle: "Se você tem um projeto em mente ou deseja entender melhor como trabalhamos, será um prazer te atender e compartilhar possibilidades.",
+    address: "Atendimento em Sorocaba e Região",
+    email: "contato@deniseguerraarquitetura.com.br",
+    instagram: "@deniseguerra_arq"
   }
 }
