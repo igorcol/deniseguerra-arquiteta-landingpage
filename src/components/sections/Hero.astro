@@ -1,0 +1,74 @@
+---
+// src/components/sections/Hero.astro
+import { content } from '../../data/denise';
+---
+
+<section class="relative min-h-screen flex items-center pt-20 overflow-hidden bg-off-white">
+  <div class="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+    
+    <div class="lg:col-span-7 z-10">
+      <div class="overflow-hidden">
+        <span class="inline-block text-brand-purple tracking-[0.3em] uppercase text-xs mb-4 animate-reveal">
+          Arquitetura Contemporânea
+        </span>
+      </div>
+      
+      <h1 class="text-5xl md:text-7xl lg:text-8xl leading-[1.1] mb-8 font-serif">
+        {content.hero.title.split(' ').slice(0, 2).join(' ')} <br/>
+        <span class="italic text-gray-400">{content.hero.title.split(' ').slice(2).join(' ')}</span>
+      </h1>
+
+      <p class="text-lg text-gray-600 max-w-md mb-10 leading-relaxed">
+        {content.hero.subtitle}
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-6">
+        <a href={`https://wa.me/${content.hero.whatsapp}`} 
+           class="bg-brand-purple text-white px-10 py-5 text-sm uppercase tracking-widest hover:bg-black transition-all text-center">
+          {content.hero.cta}
+        </a>
+      </div>
+    </div>
+
+    <div class="lg:col-span-5 relative h-[70vh] lg:h-[80vh]">
+      <div class="absolute inset-0 bg-gray-200 overflow-hidden">
+        <img 
+          src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1000" 
+          alt="Projeto de Arquitetura Denise Guerra"
+          class="w-full h-full object-cover scale-110"
+          id="hero-image"
+          fetchpriority="high"
+        />
+      </div>
+      <div class="absolute -bottom-6 -left-6 bg-white p-8 hidden md:block shadow-xl z-20">
+        <p class="text-xs uppercase tracking-tighter text-gray-400 mb-2">Projetos Ativos</p>
+        <p class="text-3xl font-serif">+105 Clientes</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes reveal {
+    from { transform: translateY(100%); }
+    to { transform: translateY(0); }
+  }
+  .animate-reveal {
+    animation: reveal 1s cubic-bezier(0.77, 0, 0.175, 1);
+  }
+</style>
+
+<script>
+  // Parallax Suave na Imagem
+  window.addEventListener('scroll', () => {
+    const img = document.getElementById('hero-image');
+    if (img) {
+      const speed = 0.2;
+      const rect = img.parentElement?.getBoundingClientRect();
+      if (rect) {
+        const offset = (window.innerHeight - rect.top) * speed;
+        img.style.transform = `translateY(${offset * -0.1}px) scale(1.1)`;
+      }
+    }
+  });
+</script>
