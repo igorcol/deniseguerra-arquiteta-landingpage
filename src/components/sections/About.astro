@@ -1,0 +1,50 @@
+---
+import { content } from '../../data/denise';
+---
+
+<section id="sobre" class="py-24 bg-off-white overflow-hidden">
+  <div class="container mx-auto px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+      
+      <div class="lg:col-span-5 relative">
+        <div class="relative z-10 aspect-3/4 overflow-hidden border-12 border-white shadow-2xl">
+          <img 
+            src="https://deniseguerraarquitetura.com.br/wp-content/uploads/2024/05/denise-guerra-arquiteta.jpg" 
+            alt="Denise Guerra" 
+            class="w-full h-full object-cover"
+          />
+        </div>
+        <div class="absolute -bottom-10 -right-10 w-64 h-64 bg-brand-purple/5 z-0 rounded-full blur-3xl"></div>
+      </div>
+
+      <div class="lg:col-span-7">
+        <span class="text-brand-purple tracking-[0.3em] uppercase text-xs mb-4 block font-semibold">A Mente por trás dos projetos</span>
+        <h2 class="text-5xl font-serif mb-8 leading-tight">
+          {content.about.name} <br/>
+          <span class="text-2xl text-gray-400 font-light italic">{content.about.title}</span>
+        </h2>
+        
+        <div class="space-y-6 text-gray-600 leading-relaxed text-lg">
+          <p class="font-medium text-gray-800">
+            {content.about.bio}
+          </p>
+          <p>
+            {content.about.experience}
+          </p>
+        </div>
+
+        <div class="mt-12 grid grid-cols-2 gap-8 border-t border-gray-200 pt-12">
+          <div>
+            <p class="text-brand-purple font-serif text-3xl mb-1">10+</p>
+            <p class="text-xs uppercase tracking-widest text-gray-400">Anos de Experiência</p>
+          </div>
+          <div>
+            <p class="text-brand-purple font-serif text-3xl mb-1">Sorocaba</p>
+            <p class="text-xs uppercase tracking-widest text-gray-400">Atendimento Regional</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
