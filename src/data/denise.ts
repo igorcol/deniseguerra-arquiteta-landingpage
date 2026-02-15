@@ -54,4 +54,24 @@ export const content = {
       { name: "BR Machine", logo: "/logos/brmachine.png" }
     ]
   },
+
+  // * PROJECTS SECTION
+  projects: {
+    title: "Projetos em Destaque",
+    subtitle: "Uma seleção de espaços que materializam nossa busca por equilíbrio e sofisticação.",
+    items: [
+      { title: "Projeto MM", category: "Residencial", image: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1000" },
+      { title: "RF Pinheiros", category: "Interiores", image: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=1000" },
+      { title: "Votorantim Energia", category: "Corporativo", image: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1000" },
+      { title: "UHE Alecrim", category: "Industrial", image: "https://images.unsplash.com/photo-1541888946425-d81bb19480c5?q=80&w=1000" },
+    ]
+  },
+
+  // * ABOUT SECTION
+  about: {
+    name: "Denise Guerra",
+    title: "Arquiteta e Urbanista",
+    bio: "Apaixonada por transformar espaços em experiências. Com formação em Arquitetura e Urbanismo e atuação prática em projetos residenciais, comerciais e interiores, acredito que cada ambiente deve refletir quem o habita em estilo, rotina e essência.",
+    experience: "Seu trabalho une técnica, estética e sensibilidade, cuidando de cada detalhe do conceito à execução. Além de projetar, acompanha de perto todas as etapas, garantindo funcionalidade, conforto e personalidade em cada projeto."
+  }
 }
