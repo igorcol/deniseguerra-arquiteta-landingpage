@@ -1,0 +1,46 @@
+---
+const navItems = [
+  { name: 'Início', href: '#' },
+  { name: 'Serviços', href: '#servicos' },
+  { name: 'Portfólio', href: '#portfolio' },
+  { name: 'Contato', href: '#contato' },
+];
+---
+
+<header id="main-header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-6">
+  <div class="container mx-auto px-6 flex justify-between items-center">
+    <div class="text-2xl font-bold tracking-tighter text-[#4A2B4D]">
+      DENISE<span class="font-light text-gray-400">GUERRA</span>
+    </div>
+
+    <nav class="hidden md:flex gap-8 items-center">
+      {navItems.map(item => (
+        <a href={item.href} class="text-sm uppercase tracking-widest hover:text-[#4A2B4D] transition-colors font-medium">
+          {item.name}
+        </a>
+      ))}
+      <a href="#contato" class="bg-[#4A2B4D] text-white px-6 py-2 text-xs uppercase tracking-[0.2em] hover:bg-black transition-all">
+        Orçamento
+      </a>
+    </nav>
+
+    <button class="md:hidden flex flex-col gap-1.5">
+      <span class="w-6 h-0.5 bg-black"></span>
+      <span class="w-6 h-0.5 bg-black"></span>
+    </button>
+  </div>
+</header>
+
+<script>
+  const header = document.getElementById('main-header');
+  
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      header?.classList.add('bg-white/80', 'backdrop-blur-md', 'py-4', 'shadow-sm');
+      header?.classList.remove('py-6');
+    } else {
+      header?.classList.remove('bg-white/80', 'backdrop-blur-md', 'py-4', 'shadow-sm');
+      header?.classList.add('py-6');
+    }
+  });
+</script>

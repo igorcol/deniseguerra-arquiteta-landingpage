@@ -1,0 +1,17 @@
+/* src/styles/global.css */
+@import "tailwindcss";
+
+@theme {
+  /* É aqui que definimos as cores personalizadas na v4 */
+  --color-brand-purple: #4A2B4D;
+  --color-off-white: #FAF9F6;
+}
+
+/* Suas fontes e estilos globais continuam aqui */
+:root {
+  font-family: 'Inter', sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+}
