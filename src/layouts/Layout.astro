@@ -13,6 +13,11 @@ const {
   title = "Denise Guerra | Arquitetura, Urbanismo & Design de Interiores", 
   description = "Transformando ideias em espaços que acolhem. Projetos residenciais e comerciais em Sorocaba e Região." 
 } = Astro.props;
+
+// Definição da URL para o preview do WhatsApp (og:image) 
+// TODO: ---------- MUDAR PARA SITE OFICAL ----------
+const siteUrl = "https://deniseguerraarquitetura-exemplo.vercel.app";
+const ogImage = `${siteUrl}/images/og-image.png`; // Agora usando o banner
 ---
 
 <!doctype html>
@@ -30,11 +35,15 @@ const {
         <link rel="canonical" href="https://deniseguerraarquitetura.com.br" />
 
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://deniseguerraarquitetura.com.br" />
+        <meta property="og:url" content={siteUrl} />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         
-        <meta property="og:image" content="/images/icone.png" />
+        <meta property="og:image" content={ogImage} />
+        <meta property="og:image:secure_url" content={ogImage} />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
