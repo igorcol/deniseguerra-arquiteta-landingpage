@@ -1,5 +1,6 @@
 ---
 // src/layouts/Layout.astro
+import WhatsappButton from '../components/shared/WhatsappButton.astro';
 import { content } from '../data/denise';
 import '../styles/global.css'
 
@@ -56,5 +57,6 @@ const {
     </head>
     <body class="bg-off-white text-[#2D2D2D] antialiased overflow-x-hidden">
         <slot />
+        <WhatsappButton />
     </body>
 </html>
