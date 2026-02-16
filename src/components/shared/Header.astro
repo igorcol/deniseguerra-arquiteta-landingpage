@@ -1,4 +1,5 @@
 ---
+// src/components/shared/Header.astro
 const navItems = [
   { name: 'Início', href: '#' },
   { name: 'Serviços', href: '#servicos' },
@@ -9,38 +10,105 @@ const navItems = [
 
 <header id="main-header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-6">
   <div class="container mx-auto px-6 flex justify-between items-center">
-    <div class="text-2xl font-bold tracking-tighter text-[#4A2B4D]">
-      DENISE<span class="font-light text-gray-400">GUERRA</span>
-    </div>
+    
+    <a href="/" class="flex items-center gap-3 group z-60">
+      <img src="/images/icone.png" alt="Logo" class="w-8 h-8 object-contain" />
+      <div class="text-xl font-bold tracking-tighter text-brand-purple" id="header-logo-text">
+        DENISE<span class="font-light text-gray-400">GUERRA</span>
+      </div>
+    </a>
 
     <nav class="hidden md:flex gap-8 items-center">
       {navItems.map(item => (
-        <a href={item.href} class="text-sm uppercase tracking-widest hover:text-[#4A2B4D] transition-colors font-medium">
+        <a href={item.href} class="text-[10px] uppercase tracking-[0.2em] hover:text-brand-purple transition-colors font-bold">
           {item.name}
         </a>
       ))}
-      <a href="#contato" class="bg-[#4A2B4D] text-white px-6 py-2 text-xs uppercase tracking-[0.2em] hover:bg-black transition-all">
+      <a href="#contato" class="bg-brand-purple text-white px-6 py-2 text-[10px] uppercase tracking-[0.2em] hover:bg-black transition-all font-bold">
         Orçamento
       </a>
     </nav>
 
-    <button class="md:hidden flex flex-col gap-1.5">
-      <span class="w-6 h-0.5 bg-black"></span>
-      <span class="w-6 h-0.5 bg-black"></span>
+    <button id="menu-toggle" class="md:hidden z-60 flex flex-col gap-1.5 p-2">
+      <span class="w-6 h-0.5 bg-black transition-all duration-300" id="line1"></span>
+      <span class="w-6 h-0.5 bg-black transition-all duration-300" id="line2"></span>
     </button>
+  </div>
+
+  <div id="mobile-menu" class="fixed inset-0 bg-white z-50 translate-x-full transition-transform duration-500 flex flex-col items-center justify-center gap-8">
+    {navItems.map(item => (
+      <a href={item.href} class="mobile-link text-3xl font-serif text-brand-purple opacity-0 translate-y-4 transition-all duration-500">
+        {item.name}
+      </a>
+    ))}
+    <a href="#contato" class="mobile-link mt-4 bg-brand-purple text-white px-10 py-4 text-xs uppercase tracking-widest opacity-0 translate-y-4 transition-all duration-500">
+      Solicitar Orçamento
+    </a>
   </div>
 </header>
 
+
 <script>
   const header = document.getElementById('main-header');
-  
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const lines = [document.getElementById('line1'), document.getElementById('line2')];
+  const links = document.querySelectorAll('.mobile-link');
+
+  const closeMenu = () => {
+    mobileMenu?.classList.add('translate-x-full');
+    mobileMenu?.classList.remove('translate-x-0');
+    
+    // Reset dos ícones do hamburguer
+    lines[0]?.classList.remove('rotate-45', 'translate-y-2');
+    lines[1]?.classList.remove('-rotate-45', '-translate-y-px');
+    
+    // Força o estado "invisível" para a próxima abertura
+    links.forEach(l => {
+      l.classList.add('opacity-0', 'translate-y-4');
+      l.classList.remove('opacity-100', 'translate-y-0');
+    });
+    
+    document.body.style.overflow = 'auto';
+  };
+
+  const openMenu = () => {
+    // Garante que o menu comece do topo antes de deslizar
+    window.scrollTo(0, 0); 
+    
+    mobileMenu?.classList.remove('translate-x-full');
+    mobileMenu?.classList.add('translate-x-0');
+    
+    lines[0]?.classList.add('rotate-45', 'translate-y-2');
+    lines[1]?.classList.add('-rotate-45', '-translate-y-px');
+    
+    // Animação em cascata com reset de classes
+    links.forEach((l, i) => {
+      setTimeout(() => {
+        l.classList.remove('opacity-0', 'translate-y-4');
+        l.classList.add('opacity-100', 'translate-y-0');
+      }, 200 + (i * 100));
+    });
+    
+    document.body.style.overflow = 'hidden';
+  };
+
   window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
-      header?.classList.add('bg-white/80', 'backdrop-blur-md', 'py-4', 'shadow-sm');
-      header?.classList.remove('py-6');
+      header?.classList.add('bg-white/90', 'backdrop-blur-md', 'py-4', 'shadow-sm');
     } else {
-      header?.classList.remove('bg-white/80', 'backdrop-blur-md', 'py-4', 'shadow-sm');
-      header?.classList.add('py-6');
+      header?.classList.remove('bg-white/90', 'backdrop-blur-md', 'py-4', 'shadow-sm');
     }
+  });
+
+  menuToggle?.addEventListener('click', () => {
+    const isOpen = mobileMenu?.classList.contains('translate-x-0');
+    isOpen ? closeMenu() : openMenu();
+  });
+
+  links.forEach(link => {
+    link.addEventListener('click', () => {
+      setTimeout(closeMenu, 300);
+    });
   });
 </script>

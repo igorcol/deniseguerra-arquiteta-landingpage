@@ -1,28 +1,36 @@
 ---
+// src/components/sections/SocialProof.astro
 import { content } from '../../data/denise';
 ---
 
-<section class="py-20 bg-off-white border-y border-gray-100">
-  <div class="container mx-auto px-6">
-    <div class="grid grid-cols-1 lg:grid-cols-4 gap-12 items-center">
+<section class="py-24 bg-brand-purple text-white relative overflow-hidden">
+  <div class="absolute inset-0 opacity-5 pointer-events-none select-none">
+    <div class="absolute inset-0" style="background-image: linear-gradient(30deg, #000 12%, transparent 12.5%, transparent 87%, #000 87.5%, #000), linear-gradient(150deg, #000 12%, transparent 12.5%, transparent 87%, #000 87.5%, #000), linear-gradient(30deg, #000 12%, transparent 12.5%, transparent 87%, #000 87.5%, #000), linear-gradient(150deg, #000 12%, transparent 12.5%, transparent 87%, #000 87.5%, #000), linear-gradient(60deg, #000 25%, transparent 25.5%, transparent 75%, #000 75.5%, #000), linear-gradient(60deg, #000 25%, transparent 25.5%, transparent 75%, #000 75.5%, #000); background-size: 80px 140px;"></div>
+  </div>
+
+  <div class="container mx-auto px-6 relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-16 items-center">
       
-      <div class="lg:col-span-1 border-l-2 border-brand-purple pl-6">
-        <p class="text-4xl font-serif text-brand-purple mb-2">
+      <div class="lg:col-span-1 border-l-2 border-white/30 pl-8">
+        <p class="text-5xl font-serif text-white mb-2">
           {content.socialProof.stats.split(' ')[0]}
         </p>
-        <p class="text-xs uppercase tracking-[0.2em] text-gray-500 font-semibold">
+        <p class="text-[10px] uppercase tracking-[0.3em] text-white/60 font-bold">
           {content.socialProof.stats.split(' ').slice(1).join(' ')}
         </p>
       </div>
 
       <div class="lg:col-span-3">
-        <div class="flex flex-wrap items-center justify-around gap-12 grayscale opacity-40 hover:grayscale-0 transition-all duration-700">
+        <div class="flex flex-wrap items-center justify-around gap-12 md:gap-24 opacity-80 hover:opacity-100 transition-opacity duration-500">
           {content.socialProof.partners.map(partner => (
-            <div class="h-12 w-auto flex items-center justify-center">
-               <span class="text-xl font-bold text-gray-400 hover:text-brand-purple transition-colors cursor-default">
-                 {partner.name}
-               </span>
-               </div>
+            <div class="h-10 md:h-14 w-auto flex items-center justify-center group">
+              <img 
+                src={partner.logo} 
+                alt={`Logo ${partner.name}`}
+                class="h-full w-auto object-contain transition-transform duration-500 group-hover:scale-110 drop-shadow-md"
+                loading="lazy"
+              />
+            </div>
           ))}
         </div>
       </div>

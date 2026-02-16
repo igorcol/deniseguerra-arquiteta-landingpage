@@ -2,67 +2,87 @@
 import { content } from '../../data/denise';
 ---
 
-<section id="servicos" class="py-24 bg-white">
+<section id="servicos" class="py-32 bg-white overflow-hidden">
   <div class="container mx-auto px-6">
-    <div class="mb-16">
-      <span class="text-brand-purple tracking-[0.3em] uppercase text-xs mb-4 block">Expertise</span>
-      <h2 class="text-4xl md:text-5xl font-serif mb-6">{content.services.title}</h2>
-      <p class="text-gray-500 max-w-lg leading-relaxed">{content.services.subtitle}</p>
-    </div>
+    
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 mb-32">
+      <div class="lg:col-span-6">
+        <span class="text-brand-purple tracking-[0.4em] uppercase text-[10px] font-bold mb-8 block">Expertise & Propósito</span>
+        <h2 class="text-4xl md:text-5xl lg:text-6xl font-serif leading-[1.1] mb-8">
+          Nós transformamos ideias em <span class="italic text-gray-400">espaços que acolhem.</span>
+        </h2>
+        <p class="text-xl text-gray-500 font-light leading-relaxed max-w-xl">
+          Mais do que projetos, entregamos <span class="text-brand-purple font-medium">sensibilidade</span> para cada ambiente, funcionalidade em cada detalhe e propósito em cada escolha.
+        </p>
+      </div>
 
-    <div class="max-w-4xl border-t border-gray-200">
-      {content.services.items.map((item) => (
-        <details class="group border-b border-gray-200">
-          <summary class="flex justify-between items-center cursor-pointer py-8 list-none group-hover:bg-off-white/50 transition-all px-4">
-            <h3 class="text-xl md:text-2xl font-serif group-open:text-brand-purple transition-colors">
-              {item.title}
-            </h3>
-            <span class="relative flex items-center justify-center w-6 h-6">
-              <span class="absolute w-full h-0.5 bg-gray-300 group-open:rotate-90 transition-transform duration-300"></span>
-              <span class="absolute w-full h-0.5 bg-gray-300 group-open:opacity-0 transition-opacity"></span>
-            </span>
-          </summary>
-          
-          <div class="px-4 pb-8 grid grid-cols-1 md:grid-cols-2 gap-8 animate-fade-down animate-duration-300">
-            <div>
-              <p class="text-gray-600 leading-relaxed mb-4">
-                {item.description}
-              </p>
+      <div class="lg:col-span-6 border-t border-gray-100">
+        {content.services.items.map((item, index) => (
+          <details class="group border-b border-gray-100">
+            <summary class="flex justify-between items-center cursor-pointer py-10 list-none transition-all px-2">
+              <div class="flex items-baseline gap-6">
+                <span class="text-[10px] font-bold text-gray-300 group-hover:text-brand-purple transition-colors">0{index + 1}</span>
+                <h3 class="text-2xl md:text-3xl font-serif group-open:italic transition-all">
+                  {item.title}
+                </h3>
+              </div>
+              
+              <div class="relative w-8 h-8 flex items-center justify-center">
+                <div class="w-full h-px bg-gray-200 group-open:rotate-90 transition-transform duration-500"></div>
+                <div class="absolute w-full h-px bg-gray-200 group-open:opacity-0"></div>
+              </div>
+            </summary>
+            
+            <div class="px-8 pb-10 animate-reveal-service">
+              <div class="grid grid-cols-1 md:grid-cols-5 gap-8">
+                <div class="md:col-span-3">
+                  <p class="text-gray-500 leading-relaxed text-sm">
+                    {item.description}
+                  </p>
+                </div>
+                <ul class="md:col-span-2 space-y-3">
+                  {item.list.map(point => (
+                    <li class="flex items-center gap-3 text-[11px] uppercase tracking-widest text-gray-400 font-semibold">
+                      <span class="w-1 h-1 bg-brand-purple rounded-full"></span>
+                      {point}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
-            <ul class="grid grid-cols-1 gap-2">
-              {item.list.map(point => (
-                <li class="flex items-center gap-3 text-sm text-gray-500">
-                  <span class="w-1.5 h-1.5 bg-brand-purple rounded-full"></span>
-                  {point}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </details>
-      ))}
+          </details>
+        ))}
+      </div>
     </div>
 
-    <div class="mt-16">
+    <div class="flex flex-col md:flex-row items-center justify-between border-t border-gray-100 pt-12 gap-8">
+      <p class="text-gray-400 text-xs uppercase tracking-[0.3em]">Sorocaba • Projetos Autorais</p>
       <a href={`https://wa.me/${content.hero.whatsapp}`} 
-         class="inline-flex items-center gap-4 text-brand-purple font-semibold tracking-widest text-xs uppercase group">
-        Falar com Denise sobre meu projeto
-        <span class="w-12 h-px bg-brand-purple group-hover:w-20 transition-all"></span>
+         class="group flex items-center gap-6 text-[10px] uppercase tracking-[0.5em] font-bold text-brand-purple">
+        Solicitar consultoria exclusiva
+        <div class="relative w-16 h-px bg-brand-purple/20 overflow-hidden">
+          <div class="absolute inset-0 bg-brand-purple -translate-x-full group-hover:translate-x-0 transition-transform duration-500"></div>
+        </div>
       </a>
     </div>
+
   </div>
 </section>
 
 <style>
-  /* Remove a seta padrão do details */
-  summary::-webkit-details-marker {
-    display: none;
+  summary::-webkit-details-marker { display: none; }
+  
+  @keyframes reveal-service {
+    from { opacity: 0; transform: translateY(10px); filter: blur(5px); }
+    to { opacity: 1; transform: translateY(0); filter: blur(0); }
   }
   
-  @keyframes fade-down {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
+  .animate-reveal-service {
+    animation: reveal-service 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
-  .animate-fade-down {
-    animation: fade-down 0.4s ease-out forwards;
+
+  /* Efeito de itálico suave no abrir */
+  details[open] summary h3 {
+    color: var(--color-brand-purple);
   }
 </style>

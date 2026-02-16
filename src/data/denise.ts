@@ -49,16 +49,17 @@ export const content = {
   socialProof: {
     stats: "+105 Clientes Satisfeitos",
     partners: [
-      { name: "Votorantim Energia", logo: "/logos/votorantim.png" },
-      { name: "Lets Play Games", logo: "/logos/letsplay.png" },
-      { name: "BR Machine", logo: "/logos/brmachine.png" }
+      { name: "Votorantim Energia", logo: "/images/clientes/votorantim-energia.svg" },
+      { name: "Lets Play Games", logo: "/images/clientes/lets-play.png" },
+      { name: "BR Machine", logo: "/images/clientes/logo-br-machine.svg" }
     ]
   },
 
   // * PROJECTS SECTION
   projects: {
-    title: "Projetos em Destaque",
-    subtitle: "Uma seleção de espaços que materializam nossa busca por equilíbrio e sofisticação.",
+    titlePrincipal: "Cada projeto é um",
+    titleDestaque: "reflexo de quem vive ali.",
+    manifesto: "Nosso traço conecta pessoas, espaços e histórias com sensibilidade, técnica e intenção.",
     items: [
       { title: "Projeto MM", category: "Residencial", image: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1000" },
       { title: "RF Pinheiros", category: "Interiores", image: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=1000" },
