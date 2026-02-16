@@ -48,7 +48,10 @@ import { content } from '../../data/denise';
     </div>
 
     <div class="lg:col-span-5 relative group">
-      <div class="aspect-3/4 overflow-hidden relative">
+      
+      <div class="absolute inset-0 border border-brand-purple translate-x-6 translate-y-6 -z-10 transition-transform duration-700 group-hover:translate-x-4 group-hover:translate-y-4"></div>
+
+      <div class="aspect-3/4 overflow-hidden relative bg-gray-100 shadow-2xl">
         <img 
           src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1000" 
           alt="Projeto Denise Guerra"
@@ -56,10 +59,10 @@ import { content } from '../../data/denise';
           id="hero-image"
           fetchpriority="high"
         />
-        <div class="absolute inset-0 border-20px border-white/10 pointer-events-none"></div>
+        <div class="absolute inset-0 border-20 border-white/10 pointer-events-none"></div>
       </div>
       
-      <div class="absolute -bottom-8 -right-8 bg-white/80 backdrop-blur-xl p-10 shadow-2xl border border-white/20 hidden md:block">
+      <div class="absolute -bottom-8 -right-8 bg-white/80 backdrop-blur-xl p-10 shadow-2xl border border-white/20 hidden md:block z-20">
         <p class="text-[10px] uppercase tracking-[0.3em] text-brand-purple font-bold mb-3">Expertise</p>
         <p class="text-xl font-serif text-gray-800 leading-tight">Excelência em<br/>cada detalhe</p>
       </div>

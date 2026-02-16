@@ -55,7 +55,7 @@ export const content = {
     ]
   },
 
-  // * PROJECTS SECTION
+  // * PROJECTS SECTION (portfolio)
   projects: {
     titlePrincipal: "Cada projeto é um",
     titleDestaque: "reflexo de quem vive ali.",
@@ -64,7 +64,6 @@ export const content = {
       { title: "Projeto MM", category: "Residencial", image: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1000" },
       { title: "RF Pinheiros", category: "Interiores", image: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=1000" },
       { title: "Votorantim Energia", category: "Corporativo", image: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1000" },
-      { title: "UHE Alecrim", category: "Industrial", image: "https://images.unsplash.com/photo-1541888946425-d81bb19480c5?q=80&w=1000" },
     ]
   },
 
